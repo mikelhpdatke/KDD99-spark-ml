@@ -147,11 +147,11 @@ for x in range(len(i)-1):
 #        json.dump(data, outfile)
 
 
-print data
+print(data)
 # producer = KafkaProducer(bootstrap_servers=['localhost:9092'],
 #                          value_serializer=lambda x:
 #                          json.dumps(x).encode('utf-8'))
 # producer.send('tcpdump', value=data)
 # producer.flush()
 
-print "analysis completed\n"
+print("analysis completed\n")

@@ -8,3 +8,18 @@ clustering_results_standardized.csv
 .state
 pcap/
 
+conn.log
+conn.list
+conn_sort.list
+dns.log
+dpd.log
+files.log
+http.log
+kqout
+my_header_stats.csv
+my_header_stats.html
+packet_filter.log
+ssl.log
+trafAld.list
+weird.log
+x509.log
