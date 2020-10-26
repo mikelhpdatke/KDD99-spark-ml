@@ -1,0 +1,13 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	x509
+#open	2020-10-26-10-12-30
+#fields	ts	id	certificate.version	certificate.serial	certificate.subject	certificate.issuer	certificate.not_valid_before	certificate.not_valid_after	certificate.key_alg	certificate.sig_alg	certificate.key_type	certificate.key_length	certificate.exponent	certificate.curve	san.dns	san.uri	san.email	san.ip	basic_constraints.ca	basic_constraints.path_len
+#types	time	string	count	string	string	string	time	time	string	string	string	count	string	string	vector[string]	vector[string]	vector[string]	vector[addr]	bool	count
+1603681947.487835	FLmeSigN4ubGXcs4	3	7F00006063DE96E91C688CF928000000006063	CN=*.vortex.data.microsoft.com	CN=Microsoft RSA TLS CA 02,O=Microsoft Corporation,C=US	1601908151.000000	1633444151.000000	rsaEncryption	sha256WithRSAEncryption	rsa	2048	65537	-	*.vortex.data.microsoft.com,vortex.data.microsoft.com	-	-	-	-	-
+1603681947.487835	FqHm4iv76PEK5cAWf	3	0FA74722C53D88C80F589EFB1F9D4A3A	CN=Microsoft RSA TLS CA 02,O=Microsoft Corporation,C=US	CN=Baltimore CyberTrust Root,OU=CyberTrust,O=Baltimore,C=IE	1595347200.000000	1728345600.000000	rsaEncryption	sha256WithRSAEncryption	rsa	4096	65537	-	-	-	-	-	T	0
+1603681947.512497	F5MUrqe5Q4j8o9GUe	3	7F00006063DE96E91C688CF928000000006063	CN=*.vortex.data.microsoft.com	CN=Microsoft RSA TLS CA 02,O=Microsoft Corporation,C=US	1601908151.000000	1633444151.000000	rsaEncryption	sha256WithRSAEncryption	rsa	2048	65537	-	*.vortex.data.microsoft.com,vortex.data.microsoft.com	-	-	-	-	-
+1603681947.512497	FikmKA3Fn2lerIBIXg	3	0FA74722C53D88C80F589EFB1F9D4A3A	CN=Microsoft RSA TLS CA 02,O=Microsoft Corporation,C=US	CN=Baltimore CyberTrust Root,OU=CyberTrust,O=Baltimore,C=IE	1595347200.000000	1728345600.000000	rsaEncryption	sha256WithRSAEncryption	rsa	4096	65537	-	-	-	-	-	T	0
+#close	2020-10-26-10-12-30
