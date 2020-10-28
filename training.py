@@ -1,17 +1,18 @@
+from numpy.lib.function_base import average
 import pandas as pd
 import numpy
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import confusion_matrix, zero_one_loss
+from sklearn.metrics import confusion_matrix, zero_one_loss, accuracy_score, f1_score, recall_score, precision_score
 from sklearn.model_selection import train_test_split
 import pickle
 # Must declare data_dir as the directory of training and test files
 # data_dir="./datasets/KDD-CUP-99/"
-data_dir = "./"
-# raw_data_filename = data_dir + "kddcup.data"
-raw_data_filename = data_dir + "kddcupdata_10_percent_corrected"
+DataDir = "./"
+raw_data_filename = DataDir + "kddcupdata_10_percent_corrected"
+# raw_data_filename = DataDir + "KDDTrain+_2.csv"
 
 print("Loading raw data")
 
@@ -49,7 +50,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 print("X_train, y_train:", X_train.shape, y_train.shape)
 print("X_test, y_test:", X_test.shape, y_test.shape)
 
-print(X_test)
+# print(X_test)
 
 # Training, choose model by commenting/uncommenting clf=
 print("Training model")
@@ -65,13 +66,25 @@ print("Score: ", trained_model.score(X_train, y_train))
 print("Predicting")
 y_pred = clf.predict(X_test)
 
+# print("y_test", y_test)
+
+# print("y_pred", y_pred)
+
 print("Computing performance metrics")
 results = confusion_matrix(y_test, y_pred)
 error = zero_one_loss(y_test, y_pred)
+accuracy = accuracy_score(y_test, y_pred)
+recall = recall_score(y_test, y_pred, average='micro')
+precision = precision_score(y_test, y_pred, average='micro')
+f1 = f1_score(y_test, y_pred, average='micro')
 
 print("Confusion matrix:\n", results)
 print("Error: ", error)
+print("accuracy ", accuracy)
+print("recall ", recall)
+print("precision ", precision)
 
+print("f1 ", f1)
 #  save model
 filename = 'model'
 pickle.dump(clf, open(filename, 'wb'))
